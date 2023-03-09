@@ -19,7 +19,7 @@ const BottomNav = () => {
             color="grey"
             size={34}
           />
-          <Text>Plan</Text>
+          <Text style={styles.Bottom_Nav_Text}>Plan</Text>
         </TouchableOpacity>
       </View>
       <View>
@@ -30,7 +30,7 @@ const BottomNav = () => {
             color="grey"
             size={34}
           />
-          <Text>Workouts</Text>
+          <Text style={styles.Bottom_Nav_Text}>Workouts</Text>
         </TouchableOpacity>
       </View>
       <View>
@@ -41,7 +41,7 @@ const BottomNav = () => {
             color="grey"
             size={34}
           />
-          <Text>Progress</Text>
+          <Text style={styles.Bottom_Nav_Text}>Progress</Text>
         </TouchableOpacity>
       </View>
       <View>
@@ -49,7 +49,7 @@ const BottomNav = () => {
         onPress={() => navigation.navigate('UserProfile')}
         >
           <Icon type="antdesign" name="user" color="grey" size={34} />
-          <Text>Profile</Text>
+          <Text style={styles.Bottom_Nav_Text}>Profile</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -63,6 +63,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 20,
     alignItems: 'center',
+  },
+  Bottom_Nav_Text:{
+    fontSize:12,
+    color: 'grey',
   },
 });
 

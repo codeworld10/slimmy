@@ -6,6 +6,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  StatusBar,
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-easy-icon';
@@ -14,8 +15,9 @@ import {ProgressBar} from '@react-native-community/progress-bar-android';
 
 const UserProfile = () => {
   return (
-    <View>
+    <View style={styles.Bottom_Nav_Style}>
       <ScrollView>
+      <StatusBar backgroundColor="#ffffff" />
         <View style={styles.Icons_Horizontal}>
           <Icon
             type="ionicon"
@@ -23,7 +25,7 @@ const UserProfile = () => {
             size={34}
             color="#212122"
           />
-           <Image
+          <Image
             style={styles.Profile_Image}
             source={require('../../assets/images/julie.jpg')}
           />
@@ -38,12 +40,12 @@ const UserProfile = () => {
             <Icon type="ionicon" name="woman-outline" color="white" size={28} />
           </View>
           <View style={styles.Progress_Bar_View}>
-          <ProgressBar
-          styleAttr="Horizontal"
-          indeterminate={false}
-          progress={0.8}
-          color="#C9F24D"
-          />
+            <ProgressBar
+              styleAttr="Horizontal"
+              indeterminate={false}
+              progress={0.8}
+              color="#C9F24D"
+            />
           </View>
           <View style={styles.Kg_View}>
             <View>
@@ -138,7 +140,8 @@ const UserProfile = () => {
           </View>
         </View>
       </ScrollView>
-      <View style={styles.Bottom}>
+      {/* Bottom menu component */}
+      <View>
         <BottomNav />
       </View>
     </View>
@@ -146,12 +149,12 @@ const UserProfile = () => {
 };
 
 const styles = StyleSheet.create({
-  Bottom: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
+  Bottom_Nav_Style: {
+    backgroundColor: 'white',
+    flex: 1,
+    justifyContent: 'space-between',
   },
+
   Icons_Horizontal: {
     display: 'flex',
     flexDirection: 'row',
@@ -159,26 +162,30 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
+
   Profile_Image: {
     height: 150,
     width: 150,
     resizeMode: 'contain',
     borderRadius: 100,
   },
+
   User_Name: {
     textAlign: 'center',
     fontSize: 20,
     color: '#212122',
     paddingVertical: 5,
   },
+
   Card: {
     backgroundColor: '#212122',
     marginHorizontal: 20,
     marginVertical: 10,
     borderRadius: 20,
   },
-  Progress_Bar_View:{
- paddingHorizontal: 20,
+
+  Progress_Bar_View: {
+    paddingHorizontal: 20,
   },
 
   Weight_Icon: {
@@ -188,10 +195,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 10,
   },
+
   Weight_Text: {
     color: 'white',
     fontSize: 20,
   },
+
   Kg_View: {
     display: 'flex',
     flexDirection: 'row',
@@ -199,24 +208,29 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 10,
   },
+
   Kg_Title: {
     color: 'grey',
     fontSize: 15,
   },
+
   Kg_Text: {
     color: 'white',
     fontSize: 18,
     fontWeight: '700',
     paddingVertical: 5,
   },
+
   Log_Btn_View: {
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
+
   Log_Btn_Touch: {
     backgroundColor: '#212122',
     borderRadius: 30,
   },
+
   Log_Btn_Text: {
     textAlign: 'center',
     paddingVertical: 15,
@@ -232,7 +246,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 20,
     paddingVertical: 15,
-    backgroundColor: '#eeeeee',
+    backgroundColor: 'rgba(240, 244, 250, 0.4)',
     borderRadius: 30,
     marginTop: 10,
   },
